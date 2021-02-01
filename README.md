@@ -1,12 +1,12 @@
 # Metaballs Visualization
 
-![Preview](https://s2.gifyu.com/images/metaballs.gif)
+To see the final result go to [Preview](https://s2.gifyu.com/images/metaballs.gif)
 
 Metaballs Visualization using a isosurfaces approach witch descibes a formula that is used for coloring each pixel, resulting in a loop similar as the Marching Squares Algorithm.
 
 The formula used is: 
 
-$$ \frac{r * s}{ d } $$
+<center>r * s / d</center>
 
 Where:
 - r: radius of the ball
