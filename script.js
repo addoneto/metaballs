@@ -16,7 +16,8 @@ window.onload = () => {
     canvas.height = height;
 
     for(let i = 0; i < BALLS_COUNT; i++){
-        balls.push(new Ball(Math.floor(random(0, width)), Math.floor(random(0, height)), random(0, 100)));
+        let radius = random(5, 30);
+        balls.push(new Ball(Math.floor(random(radius + 10, width - radius - 10)), Math.floor(random(radius + 10, height - radius - 10)), radius));
     }
 
     update();
@@ -35,7 +36,7 @@ function update(){
 
             for(ball of balls){
                 let dist = distance(x, y, ball.pos.x, ball.pos.y);
-                sumColor += 50 * ball.radius / dist;
+                sumColor += 100 * ball.radius / dist;
             }
 
             let color = sumColor;
@@ -72,11 +73,11 @@ class Ball {
         this.pos.x += this.vel.x;
         this.pos.y += this.vel.y;
 
-        if(this.pos.x > width || this.pos.x < 0){
+        if(this.pos.x + this.radius > width || this.pos.x - this.radius < 0){
             this.vel.x *= -1;
         }
 
-        if(this.pos.y > height || this.pos.y < 0){
+        if(this.pos.y + this.radius > height || this.pos.y - this.radius < 0){
             this.vel.y *= -1;
         }
     }

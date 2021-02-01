@@ -8,9 +8,11 @@ The formula used is:
 
 <center>r * s / d</center>
 
+<br>
+
 Where:
 - r: radius of the ball
-- s: spreading 
+- s: spreading amount
 - d: distance from the pixel to the ball
 
 Then this formula is aplyied for each ball/blob and the color of the pixel is defined by the sum of all values.
